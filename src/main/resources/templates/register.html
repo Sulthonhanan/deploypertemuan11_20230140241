@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrasi Akun</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; padding-top: 50px; }
+        .register-container { border: 1px solid #ccc; padding: 20px; border-radius: 8px; width: 350px; }
+        input { width: 100%; margin-bottom: 10px; padding: 8px; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; background-color: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<div class="register-container">
+    <h2>Daftar Akun Baru</h2>
+
+    <form th:action="@{/register}" th:object="${request}" method="post">
+        <label>Username:</label>
+        <input type="text" th:field="*{username}" required />
+
+        <label>Password:</label>
+        <input type="password" th:field="*{password}" required />
+
+        <label>Nama Lengkap:</label>
+        <input type="text" th:field="*{nama}" required />
+
+        <label>Alamat:</label>
+        <input type="text" th:field="*{alamat}" required />
+
+        <button type="submit">Daftar</button>
+    </form>
+
+    <p>Sudah punya akun? <a th:href="@{/login}">Login di sini</a></p>
+</div>
+
+</body>
+</html>
