@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Halaman Home</title>
+</head>
+<body>
+<h1>Selamat Datang di Halaman Home</h1>
+
+<div th:if="${user != null}">
+    <h3>Informasi Akun:</h3>
+    <p><strong>Username:</strong> <span th:text="${user.username}">Username</span></p>
+
+    <div th:if="${profile != null}">
+        <h3>Informasi Profil:</h3>
+        <p><strong>Nama Lengkap:</strong> <span th:text="${profile.nama}">Nama</span></p>
+        <p><strong>Alamat:</strong> <span th:text="${profile.alamat}">Alamat</span></p>
+    </div>
+</div>
+
+<br>
+<form th:action="@{/logout}" method="post">
+    <button type="submit">Logout</button>
+</form>
+</body>
+</html>
