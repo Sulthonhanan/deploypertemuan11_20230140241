@@ -1,0 +1,12 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres_db
+    restart: always
+    environment:
+
+      POSTGRES_DB: praktikdeploy_db
+      POSTGRES_USER: praktikum_user
+      POSTGRES_PASSWORD: Sulthonhanan123
+    ports:
+      - "5432:5432"
